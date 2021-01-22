@@ -24,7 +24,7 @@ class Twitter{
 
         fetchData.getPost()
             .then(data =>{
-                data.forEach(this.posts.addPost(data))
+                data.forEach(this.posts.addPost)
         })
         console.log('this.posts: ', this.posts)
     }
@@ -57,7 +57,7 @@ class Posts{
         this.posts = posts
     }
 
-    addPost(tweet){
+    addPost = (tweet) => {
         const post = new Post(tweet)
         this.posts.push(post)
     }
